@@ -37,7 +37,7 @@ function App() {
       <button onClick={() => past() }>past</button>
       <button
         onClick={() => next() }
-        onKeyUp={(e) => pedal(e)}
+        onKeyDown={(e) => pedal(e)}
       >next</button>
     </div>
   )

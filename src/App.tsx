@@ -20,6 +20,12 @@ function App() {
     speak({ text: `next ${steps[currentIndex+1]}` })
   }
 
+  const pedal = (e: any) => {
+    if(e.key === 'b') {
+      next()
+    }
+  }
+
   return (
     <div className="App">
 
@@ -29,7 +35,10 @@ function App() {
       <h1 style={{ fontSize: '180px' }}>{ steps[currentIndex] }</h1>
 
       <button onClick={() => past() }>past</button>
-      <button onClick={() => next() }>next</button>
+      <button
+        onClick={() => next() }
+        onKeyUp={(e) => pedal(e)}
+      >next</button>
     </div>
   )
 }
